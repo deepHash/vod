@@ -1,0 +1,88 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Client.cpp
+Client.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Client.h
+ViewAble.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ViewAble.h
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Client.h
+string
+-
+SmartPtr.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SmartPtr.h
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ClientService.cpp
+ClientService.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ClientService.h
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ClientService.h
+vector
+-
+Client.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Client.h
+SmartPtr.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SmartPtr.h
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/IRefCount.h
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/IRefCountImpl.h
+IRefCount.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/IRefCount.h
+iostream
+-
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Movie.h
+ViewAble.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ViewAble.h
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/PlayerService.cpp
+PlayerService.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/PlayerService.h
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/PlayerService.h
+ViewAble.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ViewAble.h
+Series.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Series.h
+Movie.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Movie.h
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Series.h
+ViewAble.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ViewAble.h
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SmartPtr.h
+IRefCountImpl.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/IRefCountImpl.h
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ViewAble.cpp
+ViewAble.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ViewAble.h
+Client.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Client.h
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ViewAble.h
+string
+-
+vector
+-
+SmartPtr.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SmartPtr.h
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/main.cpp
+iostream
+-
+SmartPtr.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SmartPtr.h
+Client.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Client.h
+ClientService.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ClientService.h
+
