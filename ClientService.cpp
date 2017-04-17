@@ -1,13 +1,21 @@
 #include "ClientService.h"
 
-ClientService::ClientService() {}
+ClientService::ClientService() {
+
+}
 
 ClientService::~ClientService() {
 
 }
 
 void ClientService::addClient(SmartPtr<Client> client) {
-    clients.push_back(*client.GetPtr());
+    Client newClient = *client.GetPtr();
+//    cout <<newClient.getName()<<endl;
+//    cout <<newClient.getId()<<endl;
+   // cout <<newClient.getLocation()<<endl;
+    //cout << "the size of database is:!!!!!!!!!!!";
+    //cout <<clients.size()<<endl;
+    clients.push_back(newClient);
 }
 
 void ClientService::printInactives() {
@@ -26,6 +34,13 @@ void ClientService::printInactives() {
     if (j==0)
         cout << "All clients are busy watching something" <<endl;
 }
+
+//getters
+const vector<Client> &ClientService::getClients() const {
+    return clients;
+}
+
+
 
 
 

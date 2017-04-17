@@ -1,6 +1,15 @@
 #include "Client.h"
 #include "ViewAble.h"
 
+
+Client::Client(const Client & client) {
+    this->name = client.getName();
+    this->id = client.getId();
+    this->location = client.getLocation();
+    this->timer = 0;
+    this->currentViewAble = NULL;
+}
+
 bool Client::playViewAble() {
 
 

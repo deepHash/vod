@@ -18,6 +18,8 @@ public:
 
     Client(const string &id, const string &name, const string &location) : id(id), name(name), location(location) {timer=0;}
 
+    Client(const Client&);
+
     //detor's
     virtual ~Client() {}
 

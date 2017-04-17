@@ -30,3 +30,11 @@ void PlayerService::addSeries(SmartPtr<Series> series) {
 void PlayerService::addMovies(SmartPtr<Movie> movie) {
     database.push_back(*movie.GetPtr());
 }
+
+const vector<ViewAble> &PlayerService::getDatabase() const {
+    return database;
+}
+
+int PlayerService::getRequests() const {
+    return requests;
+}
