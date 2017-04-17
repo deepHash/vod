@@ -44,7 +44,9 @@ bool ViewAble::Register(SmartPtr<Client> client) {
 }
 
 bool ViewAble::unregister(string id) {
+    //loop through the vector of all clients currently watching this
     for (unsigned int i=0; i < currentlyWatchingMe.size(); i++) {
+        //if we have a match to the id parameter in a client erase it from the vector
         if (currentlyWatchingMe[i].getId() == id) {
             currentlyWatchingMe.erase(currentlyWatchingMe.begin()+i);
             return true;

@@ -203,6 +203,33 @@ PlayerService.cpp.s:
 	$(MAKE) -f CMakeFiles\HW1.dir\build.make CMakeFiles/HW1.dir/PlayerService.cpp.s
 .PHONY : PlayerService.cpp.s
 
+SimulationService.obj: SimulationService.cpp.obj
+
+.PHONY : SimulationService.obj
+
+# target to build an object file
+SimulationService.cpp.obj:
+	$(MAKE) -f CMakeFiles\HW1.dir\build.make CMakeFiles/HW1.dir/SimulationService.cpp.obj
+.PHONY : SimulationService.cpp.obj
+
+SimulationService.i: SimulationService.cpp.i
+
+.PHONY : SimulationService.i
+
+# target to preprocess a source file
+SimulationService.cpp.i:
+	$(MAKE) -f CMakeFiles\HW1.dir\build.make CMakeFiles/HW1.dir/SimulationService.cpp.i
+.PHONY : SimulationService.cpp.i
+
+SimulationService.s: SimulationService.cpp.s
+
+.PHONY : SimulationService.s
+
+# target to generate assembly for a file
+SimulationService.cpp.s:
+	$(MAKE) -f CMakeFiles\HW1.dir\build.make CMakeFiles/HW1.dir/SimulationService.cpp.s
+.PHONY : SimulationService.cpp.s
+
 ViewAble.obj: ViewAble.cpp.obj
 
 .PHONY : ViewAble.obj
@@ -275,6 +302,9 @@ help:
 	@echo ... PlayerService.obj
 	@echo ... PlayerService.i
 	@echo ... PlayerService.s
+	@echo ... SimulationService.obj
+	@echo ... SimulationService.i
+	@echo ... SimulationService.s
 	@echo ... ViewAble.obj
 	@echo ... ViewAble.i
 	@echo ... ViewAble.s

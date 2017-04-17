@@ -4,6 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/HW1.dir/Client.cpp.obj"
   "CMakeFiles/HW1.dir/ClientService.cpp.obj"
   "CMakeFiles/HW1.dir/PlayerService.cpp.obj"
+  "CMakeFiles/HW1.dir/SimulationService.cpp.obj"
   "HW1.pdb"
   "HW1.exe"
   "HW1.exe.manifest"

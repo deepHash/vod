@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Client.cpp" "C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/cmake-build-debug/CMakeFiles/HW1.dir/Client.cpp.obj"
   "C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ClientService.cpp" "C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/cmake-build-debug/CMakeFiles/HW1.dir/ClientService.cpp.obj"
   "C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/PlayerService.cpp" "C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/cmake-build-debug/CMakeFiles/HW1.dir/PlayerService.cpp.obj"
+  "C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SimulationService.cpp" "C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/cmake-build-debug/CMakeFiles/HW1.dir/SimulationService.cpp.obj"
   "C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ViewAble.cpp" "C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/cmake-build-debug/CMakeFiles/HW1.dir/ViewAble.cpp.obj"
   "C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/main.cpp" "C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/cmake-build-debug/CMakeFiles/HW1.dir/main.cpp.obj"
   )

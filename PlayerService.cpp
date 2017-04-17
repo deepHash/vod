@@ -13,15 +13,20 @@ PlayerService::~PlayerService() {
 
 //methods
 SmartPtr<ViewAble> PlayerService::requestsViewable(string id) {
-    return SmartPtr<ViewAble>();
+    SmartPtr<ViewAble> viewAble;
+    for(unsigned int i=0; i< database.size(); i++){
+        if (database[i].getId() == id){
+            cout << database[i].getName();
+            break;
+        }
+    }
+    return viewAble;
 }
 
 void PlayerService::addSeries(SmartPtr<Series> series) {
-    SmartPtr<ViewAble> ptr;
-    ptr =(SmartPtr<ViewAble>) series;
-    database.push_back(*ptr.GetPtr());
+    database.push_back(*series.GetPtr());
 }
 
 void PlayerService::addMovies(SmartPtr<Movie> movie) {
-    //database.push_back(*movie.GetPtr());
+    database.push_back(*movie.GetPtr());
 }

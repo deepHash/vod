@@ -23,10 +23,10 @@ public:
     //methods
     bool Register(SmartPtr<Client>);
     bool unregister(string id);
-    virtual bool play() = 0;
+    virtual bool play() {};
 
     //getters
-    virtual string getInfo() = 0;
+    virtual string getInfo() {};
     string getId() const ;
     string getName() const ;
     int getTime() const ;

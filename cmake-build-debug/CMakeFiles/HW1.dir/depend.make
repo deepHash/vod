@@ -24,6 +24,18 @@ CMakeFiles/HW1.dir/PlayerService.cpp.obj: ../Series.h
 CMakeFiles/HW1.dir/PlayerService.cpp.obj: ../SmartPtr.h
 CMakeFiles/HW1.dir/PlayerService.cpp.obj: ../ViewAble.h
 
+CMakeFiles/HW1.dir/SimulationService.cpp.obj: ../Client.h
+CMakeFiles/HW1.dir/SimulationService.cpp.obj: ../ClientService.h
+CMakeFiles/HW1.dir/SimulationService.cpp.obj: ../IRefCount.h
+CMakeFiles/HW1.dir/SimulationService.cpp.obj: ../IRefCountImpl.h
+CMakeFiles/HW1.dir/SimulationService.cpp.obj: ../Movie.h
+CMakeFiles/HW1.dir/SimulationService.cpp.obj: ../PlayerService.h
+CMakeFiles/HW1.dir/SimulationService.cpp.obj: ../Series.h
+CMakeFiles/HW1.dir/SimulationService.cpp.obj: ../SimulationService.cpp
+CMakeFiles/HW1.dir/SimulationService.cpp.obj: ../SimulationService.h
+CMakeFiles/HW1.dir/SimulationService.cpp.obj: ../SmartPtr.h
+CMakeFiles/HW1.dir/SimulationService.cpp.obj: ../ViewAble.h
+
 CMakeFiles/HW1.dir/ViewAble.cpp.obj: ../Client.h
 CMakeFiles/HW1.dir/ViewAble.cpp.obj: ../IRefCount.h
 CMakeFiles/HW1.dir/ViewAble.cpp.obj: ../IRefCountImpl.h
@@ -35,6 +47,11 @@ CMakeFiles/HW1.dir/main.cpp.obj: ../Client.h
 CMakeFiles/HW1.dir/main.cpp.obj: ../ClientService.h
 CMakeFiles/HW1.dir/main.cpp.obj: ../IRefCount.h
 CMakeFiles/HW1.dir/main.cpp.obj: ../IRefCountImpl.h
+CMakeFiles/HW1.dir/main.cpp.obj: ../Movie.h
+CMakeFiles/HW1.dir/main.cpp.obj: ../PlayerService.h
+CMakeFiles/HW1.dir/main.cpp.obj: ../Series.h
+CMakeFiles/HW1.dir/main.cpp.obj: ../SimulationService.h
 CMakeFiles/HW1.dir/main.cpp.obj: ../SmartPtr.h
+CMakeFiles/HW1.dir/main.cpp.obj: ../ViewAble.h
 CMakeFiles/HW1.dir/main.cpp.obj: ../main.cpp
 

@@ -58,6 +58,22 @@ C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Series.h
 ViewAble.h
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ViewAble.h
 
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SimulationService.cpp
+cstdio
+-
+string
+-
+SimulationService.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SimulationService.h
+
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SimulationService.h
+ClientService.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ClientService.h
+PlayerService.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/PlayerService.h
+sstream
+-
+
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SmartPtr.h
 IRefCountImpl.h
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/IRefCountImpl.h
@@ -85,4 +101,6 @@ Client.h
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Client.h
 ClientService.h
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ClientService.h
+SimulationService.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SimulationService.h
 
