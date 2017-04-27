@@ -15,6 +15,7 @@ CMakeFiles/HW1.dir/ClientService.cpp.obj: ../IRefCount.h
 CMakeFiles/HW1.dir/ClientService.cpp.obj: ../IRefCountImpl.h
 CMakeFiles/HW1.dir/ClientService.cpp.obj: ../SmartPtr.h
 
+CMakeFiles/HW1.dir/PlayerService.cpp.obj: ../Client.h
 CMakeFiles/HW1.dir/PlayerService.cpp.obj: ../IRefCount.h
 CMakeFiles/HW1.dir/PlayerService.cpp.obj: ../IRefCountImpl.h
 CMakeFiles/HW1.dir/PlayerService.cpp.obj: ../Movie.h

@@ -3,10 +3,11 @@
 #include "ViewAble.h"
 #include "Series.h"
 #include "Movie.h"
+#include "Client.h"
 
 class PlayerService {
 private:
-    vector<ViewAble> database;
+    vector<SmartPtr<ViewAble>> database;
     int requests;
 
 public:
@@ -19,8 +20,7 @@ public:
 
     //operators
     PlayerService& operator=(const PlayerService& other ){
-        //database = other.database;//.getDatabase();
-        database.assign(other.database);
+        database = other.database;//.getDatabase();
         requests = other.getRequests();
         return *this;
     }
@@ -29,9 +29,12 @@ public:
     SmartPtr<ViewAble> requestsViewable(string id);
     void addSeries(SmartPtr<Series>);
     void addMovies(SmartPtr<Movie>);
+    void addViewAble(SmartPtr<ViewAble>);
+    void printSeries();
+    void printMovies();
 
     //getters
-    const vector<ViewAble> &getDatabase() const;
+    const vector<SmartPtr<ViewAble>> &getDatabase() const;
 
     int getRequests() const;
 

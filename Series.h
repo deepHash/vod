@@ -2,17 +2,19 @@
 #define HW1_SERIES_H
 #include "ViewAble.h"
 
-class Series : virtual public ViewAble {
+class Series : public ViewAble {
 protected:
     int season;
     int episode;
 
 public:
     //ctor's
-    Series(string id, string name, int playRunTime, int season, int episode) : season(season), episode(episode) {
-        this->id = id;
-        this->name = name;
-        this->playRunTime = playRunTime;
+
+    Series() {}
+
+    Series(string id, string name, int playRunTime, int season, int episode) : ViewAble(id, name, playRunTime) {
+        this->season = season;
+        this->episode = episode;
     }
 
     Series(const Series & series) {
@@ -40,7 +42,7 @@ public:
     //methods
     //ToDo finish overrided methods 11/04
     string getInfo() override {
-        return season+" "+episode;
+        return "series";
     }
 
     bool play() override {

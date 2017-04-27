@@ -6,7 +6,7 @@
 
 class ClientService {
 private:
-    vector<Client> clients;
+    vector<SmartPtr<Client>> clients;
 public:
 
     //ctor's
@@ -20,7 +20,7 @@ public:
     void printInactives();
 
     //getter
-    const vector<Client> &getClients() const;
+    const vector<SmartPtr<Client>> &getClients() const;
 
     //Operators
     ClientService& operator=(const ClientService& other ){

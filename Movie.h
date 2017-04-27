@@ -4,22 +4,23 @@
 
 class Movie : public ViewAble {
 protected:
-    bool OscarWinner;
+    bool oscarWinner;
 
 
 public:
     //ctor's
-    Movie(string id, string name, int playRunTime, bool OscarWinner) : OscarWinner(OscarWinner) {
-        this->id = id;
-        this->name = name;
-        this->playRunTime = playRunTime;
+
+    Movie() {}
+
+    Movie(string id, string name, int playRunTime, bool oscarWinner) : ViewAble(id, name, playRunTime) {
+        this->oscarWinner = oscarWinner;
     }
 
     Movie(const Movie & movie) {
         this->id = movie.getId();
         this->name = movie.getName();
         this->playRunTime = movie.getTime();
-        OscarWinner = movie.isOscarWinner();
+        oscarWinner = movie.isOscarWinner();
     }
 
     //detor's
@@ -29,13 +30,13 @@ public:
 
     //getters
     bool isOscarWinner() const {
-        return OscarWinner;
+        return oscarWinner;
     }
 
     //methods
     //ToDo finish overrided methods 11/04
     string getInfo() override {
-        return nullptr;
+        return "movie";
     }
 
     bool play() override {

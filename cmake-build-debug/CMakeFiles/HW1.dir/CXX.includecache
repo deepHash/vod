@@ -53,6 +53,8 @@ Series.h
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Series.h
 Movie.h
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Movie.h
+Client.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Client.h
 
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Series.h
 ViewAble.h
@@ -71,6 +73,8 @@ ClientService.h
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ClientService.h
 PlayerService.h
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/PlayerService.h
+ViewAble.h
+C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ViewAble.h
 sstream
 -
 
@@ -99,8 +103,6 @@ SmartPtr.h
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SmartPtr.h
 Client.h
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/Client.h
-ClientService.h
-C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/ClientService.h
 SimulationService.h
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SimulationService.h
 

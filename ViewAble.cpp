@@ -4,6 +4,12 @@
 //ctor's
 ViewAble::ViewAble() {}
 
+ViewAble::ViewAble(string id, string name, int playRunTime) {
+    this->id = id;
+    this->name = name;
+    this->playRunTime = playRunTime;
+}
+
 ViewAble::ViewAble(const ViewAble & viewAble) {
     id = viewAble.getId();
     name = viewAble.getName();
@@ -13,7 +19,7 @@ ViewAble::ViewAble(const ViewAble & viewAble) {
 
 //dctor's
 ViewAble::~ViewAble() {
-
+    currentlyWatchingMe.clear();
 }
 
 //getters
@@ -29,17 +35,14 @@ string ViewAble::getName() const {
     return name;
 }
 
-vector<Client> ViewAble::getCurrentlyWatchingMe() const {
+vector<SmartPtr<Client>> ViewAble::getCurrentlyWatchingMe() const {
     return currentlyWatchingMe;
 }
 
 //methods
 bool ViewAble::Register(SmartPtr<Client> client) {
     //ToDo check with Ariel regarding the vector
-//    SmartPtr<Client> pClient(new Client);
-//    pClient = client;
-
-    currentlyWatchingMe.push_back(*client.GetPtr());
+    currentlyWatchingMe.push_back(client);
     return true;
 }
 
@@ -47,7 +50,7 @@ bool ViewAble::unregister(string id) {
     //loop through the vector of all clients currently watching this
     for (unsigned int i=0; i < currentlyWatchingMe.size(); i++) {
         //if we have a match to the id parameter in a client erase it from the vector
-        if (currentlyWatchingMe[i].getId() == id) {
+        if (currentlyWatchingMe[i]->getId() == id) {
             currentlyWatchingMe.erase(currentlyWatchingMe.begin()+i);
             return true;
         }

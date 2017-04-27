@@ -3,6 +3,7 @@
 
 #include "ClientService.h"
 #include "PlayerService.h"
+#include "ViewAble.h"
 #include <sstream>
 
 class SimulationService {
@@ -33,6 +34,8 @@ public:
     const SmartPtr<PlayerService> &getPlayerServer() const;
 
     vector<string> split(const string &s, char delim);
+
+    void printSeries();
 };
 
 #endif //HW1_SIMULATIONSERVICE_H
