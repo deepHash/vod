@@ -22,6 +22,8 @@ public:
     //getter
     const vector<SmartPtr<Client>> &getClients() const;
 
+    SmartPtr<Client> getClient(string id);
+
     //Operators
     ClientService& operator=(const ClientService& other ){
         this->clients = other.getClients();

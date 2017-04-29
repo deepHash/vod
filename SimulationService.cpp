@@ -1,5 +1,6 @@
 #include <cstdio>
 #include <string>
+#include <cstring>
 #include "SimulationService.h"
 
 //ctor's
@@ -26,31 +27,98 @@ const SmartPtr<PlayerService> &SimulationService::getPlayerServer() const {
 
 
 //methods
-void SimulationService::update() {
+bool SimulationService::executeSimulation(char* clientFile, char* seriesFile, char* movieFile, char* simulationFile) {
+    //variables
+    FILE * myFile;
+    char buffer[1024];
+    string id;
+    string viewAble;
+    //END of variables
 
-}
+    //calling loadData function to load clients, movies and series
+    loadData(clientFile, seriesFile, movieFile);
+    //opening simulation file, start reading and calling commands/methods as needed
+    myFile = fopen(simulationFile, "r");
+    if (NULL == myFile) {
+        fprintf(stderr, "\n error in opening file!!\n");
+        return false;
+    }
 
-bool SimulationService::loadData() {
-    return false;
-}
+    while (!feof(myFile) ) {
+        fgets(buffer, 1024, myFile);
+        if (0 == strncmp(buffer, "printSeries", 11)){
+            printSeries();
+            continue;
+        }
 
-bool SimulationService::executeSimulation() {
+        if (0 == strncmp(buffer, "printMovies", 11)){
+            printMovies();
+            continue;
+        }
+        if (0 == strncmp(buffer, "printInactives", 14)){
+            printInactives();
+            continue;
+        }
+        if (0 == strncmp(buffer, "update", 6)){
+            update();
+            continue;
+        }
+        if (0 == strncmp(buffer, "printItem", 9)){
+            viewAble = "";
+            //copies the content after the ':' char to the viewAble string
+            for (int i=10; buffer[i] !='\n'; i++){
+                viewAble += buffer[i];
+            }
+            printItem(viewAble);
+            continue;
+        }
+        //if we find stop in the buffer, means we need to take the client id and send it to stopview method
+        if(strstr(buffer, "stop")){
+            id = "";
+            for (int i=0; i < 10; i++){
+                id += buffer[i];
+            }
+            stopView(id);
+            continue;
+        }
+        //the last command that remains is: #user:someid
+        // since we used continue in other if conditions, no need for an if condition here
+        id = "";
+        viewAble = ""; // resetting both id and viewAble
+        for (int i=0; i< 10; i++)
+            id +=buffer[i];
+        for (int i=11; buffer[i] !='\n'; i++)
+            viewAble += buffer[i];
+        registerView(id, viewAble);
+    }
 
-    //return readClients() + readMovies() + readSeries()
-    readClients();
-    readSeries();
-    //create a splitter between
-    SmartPtr<ViewAble> splitter(new ViewAble(0, "splitter", 0));
-    playerServer->addViewAble(splitter);
-    readMovies();
-    //printSeries();
-
+    if(fclose(myFile) == EOF)
+        fprintf(stderr, "\n could no close file!!!!\n");
     return true;
+}
+
+bool SimulationService::loadData(char* clientFile, char* seriesFile, char* movieFile) {
+    //load all the data - clients,movies,series
+    readClients(clientFile);
+    readSeries(seriesFile);
+    //create a splitter between
+    SmartPtr<ViewAble> splitter(new ViewAble("0", "splitter", 0));
+    playerServer->addViewAble(splitter);
+    readMovies(movieFile);
+}
+
+void SimulationService::update() {
+    //update method will loop through the clients DB and if he is watching something
+    //will call the playViewAble method that will update the timer counter
+    for(unsigned int i=0; i< clientServer->getClients().size(); i++) {
+        if (clientServer->getClients()[i].GetPtr()->isWatching())
+            clientServer->getClients()[i].GetPtr()->playViewAble();
+    }
 }
 
 //reads all the clients from the file ands calls addClient method in clientService
 //ToDo fix bug that all locations end with \n
-bool SimulationService::readClients() {
+bool SimulationService::readClients(char* clientFile) {
     //variables
     FILE * myFile;
     char buffer[1024];
@@ -60,7 +128,7 @@ bool SimulationService::readClients() {
     string location;
     //END of variables
 
-    myFile = fopen("clientFile.txt", "r");
+    myFile = fopen(clientFile, "r");
     if (NULL == myFile) {
         fprintf(stderr, "\n error in opening file!!\n");
         return false;
@@ -81,7 +149,7 @@ bool SimulationService::readClients() {
     return true;
 }
 
-bool SimulationService::readSeries() {
+bool SimulationService::readSeries(char* seriesFile) {
     //variables
     FILE * myFile;
     char buffer[1024];
@@ -93,7 +161,7 @@ bool SimulationService::readSeries() {
     int season;
     //END of variables
 
-    myFile = fopen("seriesFile.txt", "r");
+    myFile = fopen(seriesFile, "r");
     if (NULL == myFile) {
         fprintf(stderr, "\n error in opening file!!\n");
         return false;
@@ -119,7 +187,7 @@ bool SimulationService::readSeries() {
     return true;
 }
 
-bool SimulationService::readMovies() {
+bool SimulationService::readMovies(char* movieFile) {
     //variables
     FILE * myFile;
     char buffer[1024];
@@ -130,7 +198,7 @@ bool SimulationService::readMovies() {
     bool oscarWinner;
     //END of variables
 
-    myFile = fopen("moviesFile.txt", "r");
+    myFile = fopen(movieFile, "r");
     if (NULL == myFile) {
         fprintf(stderr, "\n error in opening file!!\n");
         return false;
@@ -139,8 +207,6 @@ bool SimulationService::readMovies() {
     while (!feof(myFile) ){
         fgets(buffer, 1024, myFile);
         tokens = split(buffer, ',');
-//        for (unsigned int i=0; i<tokens.size(); i++)
-//            cout<<tokens[i]<<endl;
         id = tokens[0];
         name = tokens[1];
         runTime = stoi(tokens[2]);
@@ -160,7 +226,7 @@ bool SimulationService::readMovies() {
     return true;
 }
 
-//a helper methid to split the input of every row in the files by a comma delimiter
+//a helper method to split the input of every row in the clients, movies, series files by a comma delimiter
 vector<string> SimulationService::split(const string &input, char delim) {
     stringstream ss(input);
     string item;
@@ -177,3 +243,30 @@ void SimulationService::printSeries() {
     playerServer->printSeries();
 }
 
+//prints all the movies that are currently in the database
+void SimulationService::printMovies() {
+    playerServer->printMovies();
+}
+
+void SimulationService::registerView(string clientID, string viewableID) {
+    //calling method to set currentViewable at the client
+    clientServer->getClient(clientID)->setCurrentViewAble(playerServer->requestsViewable(viewableID));
+    //calling method to register the client for the movie
+    playerServer->requestsViewable(viewableID)->Register(clientServer->getClient(clientID));
+}
+
+//printing an update regarding item including how many are watching it right now
+void SimulationService::printItem(string id) {
+    ViewAble item = *playerServer->requestsViewable(id).GetPtr();
+    cout << "\n-The item " << item.getName() << " has " << item.getCurrentlyWatchingMe().size() << " clients currently watching it" <<endl;
+}
+
+//printing all the clients details that aren't watching anything in the VOD
+void SimulationService::printInactives() {
+    clientServer->printInactives();
+}
+
+//stopping the client from watching what ever he was already watching
+void SimulationService::stopView(string id) {
+    clientServer->getClient(id)->stopWatching();
+}

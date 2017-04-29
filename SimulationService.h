@@ -19,15 +19,15 @@ public:
 
     void update();
 
-    bool loadData();
+    bool loadData(char* clientFile, char* seriesFile, char* movieFile);
 
-    bool executeSimulation();
+    bool executeSimulation(char* clientFile, char* seriesFile, char* movieFile, char* simulationFile);
 
-    bool readClients();
+    bool readClients(char*);
 
-    bool readSeries();
+    bool readSeries(char*);
 
-    bool readMovies();
+    bool readMovies(char*);
 
     const SmartPtr<ClientService> &getClientServer() const;
 
@@ -36,6 +36,16 @@ public:
     vector<string> split(const string &s, char delim);
 
     void printSeries();
+
+    void printMovies();
+
+    void registerView(string viewableID, string clientID);
+
+    void printItem(string id);
+
+    void printInactives();
+
+    void stopView(string id);
 };
 
 #endif //HW1_SIMULATIONSERVICE_H

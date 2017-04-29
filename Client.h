@@ -30,9 +30,14 @@ public:
 
     const string &getLocation() const;
 
+    //setters
+    void setCurrentViewAble(const SmartPtr<ViewAble> &currentViewAble);
+
     //methods
     bool playViewAble();
     bool isWatching();
+    void stopWatching();
+
 
 
 };

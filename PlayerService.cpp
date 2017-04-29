@@ -60,22 +60,28 @@ void PlayerService::addViewAble(SmartPtr<ViewAble> viewable) {
 
 void PlayerService::printSeries() {
     //variables
-    int j =0;
-    //END of variables
-    cout << "DEBUG!!!"<<endl;
-//    cout<<pMovie->getInfo()<<endl;
- //  database[50]->getInfo();
-//    for (unsigned int i=0; i<database.size(); i++){
-//        if (database[i].getInfo() == "series"){
-//            printf("%d. %s - %s\n", j, database[i].getId(), database[i].getName());
-//            j++;
-//        }
-//
-//    }
+    int j = 0;
+    cout << "\n###Printing ALL Series###\n" <<endl;
+
+    //we implemented a splitter between movies and series of type Viewable that has the id of 0
+    while(database[j]->getId() != "0") {
+            cout << j+1 << ". " << database[j]->getName() << " - " << database[j]->getId()<<endl;
+            j++;
+    }
 }
 
 void PlayerService::printMovies() {
+    //variables
+    int i=0, j=0, k =0;
 
+    cout << "\n###Printing ALL Movies###\n" <<endl;
+    while(database[j]->getId() != "0") {
+        j++;
+    }
+    //after the splitter the movies start so we assign it to an index
+    k = j;
+    for (i= k+1;i < database.size() ; i++)
+        cout << i-k << ". " << database[i]->getName() << " - " << database[i]->getId()<<endl;
 }
 
 

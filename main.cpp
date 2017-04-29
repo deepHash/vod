@@ -9,13 +9,15 @@ Authors:
 #include "SimulationService.h"
 using namespace std;
 
-int main() {
+int main(int argc, char *argv[]) {
+    if (argc != 5){
+        cout << "NOT ENOUGH ARGUMENTS TO START THE PROGRAM!" <<endl;
+    }
+    else{
+        SimulationService simulation;
 
-    SimulationService simulation;
-
-    simulation.executeSimulation();
-
-    //cout << simulation.getPlayerServer().GetPtr()->requestsViewable("D7I7G6")->getName()<<endl;
+        simulation.executeSimulation(argv[1], argv[2], argv[3], argv[4]);
+    }
 
     return 0;
 }

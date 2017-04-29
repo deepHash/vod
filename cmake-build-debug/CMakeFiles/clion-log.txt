@@ -1,4 +1,1 @@
-"C:\Program Files (x86)\JetBrains\CLion 2017.1\bin\cmake\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" "C:\Users\KaktusX\Google Drive\Studies\My\Design Patterns\C++\HW1"
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/cmake-build-debug
+CMakeLists.txt not found in C:\Users\KaktusX\Google Drive\Studies\My\Design Patterns\C++\HW1

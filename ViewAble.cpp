@@ -41,7 +41,6 @@ vector<SmartPtr<Client>> ViewAble::getCurrentlyWatchingMe() const {
 
 //methods
 bool ViewAble::Register(SmartPtr<Client> client) {
-    //ToDo check with Ariel regarding the vector
     currentlyWatchingMe.push_back(client);
     return true;
 }

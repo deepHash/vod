@@ -16,25 +16,25 @@ template <class T> class IRefCountImpl : public IRefCount<T>
 {
     private:
     int __m_counter;
-    void prntCntr () {cout<<__m_counter<<"\n";}
-
+    void prntCntr () {//cout<<__m_counter<<"\n";*
+    }
     protected:
         virtual void __IncRefCount()
         {
             __m_counter++;
-            cout<<"increased reference, it is now : ";
+            //cout<<"increased reference, it is now : ";
             prntCntr();
         }
         virtual void __DecRefCount()
         {
             __m_counter--;
 
-            cout<<"Decreased reference, it is now : ";
+            //cout<<"Decreased reference, it is now : ";
             prntCntr();
 
             if(__m_counter<=0)
             {
-                cout<<"Reference is 0, destroying Ref.\n";
+                //cout<<"Reference is 0, destroying Ref.\n";
                 __DestroyRef();
             }
         }
@@ -46,7 +46,7 @@ template <class T> class IRefCountImpl : public IRefCount<T>
         {
             if(GetPtr()!=NULL)
                 delete GetPtr();
-            cout<<"Deleted reference\n";
+            //cout<<"Deleted reference\n";
         }
         IRefCountImpl()
         {

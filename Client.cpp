@@ -1,7 +1,7 @@
 #include "Client.h"
 #include "ViewAble.h"
 
-
+//c'tors
 Client::Client(const Client & client) {
     this->name = client.getName();
     this->id = client.getId();
@@ -10,15 +10,45 @@ Client::Client(const Client & client) {
     this->currentViewAble = NULL;
 }
 
+//getters
+
+const string &Client::getName() const {
+    return name;
+}
+
+const string &Client::getLocation() const {
+    return location;
+}
+
+const string &Client::getId() const {
+    return id;
+}
+
+//setters
+void Client::setCurrentViewAble(const SmartPtr<ViewAble> &currentViewAble) {
+    if(this->isWatching()){
+        cout << name << " has stopped watching " <<this->currentViewAble->getName() <<" in the middle and is starting to watch something else" <<endl;
+    }
+    cout << name << " is starting to watch " << currentViewAble.GetPtr()->getName() <<" now" <<endl;
+    this->currentViewAble = currentViewAble;
+}
+
+//methods
 bool Client::playViewAble() {
 
 
-    if(currentViewAble){
+    if(this->isWatching()){
         timer+=5;
-        if(currentViewAble->getTime() <= timer ) {
+        //checks if the clients time watching the viewable is bigger than viewable run time
+        if (currentViewAble->getTime() <= timer ) {
             timer = 0;
-            cout << name + " has finished watching " + currentViewAble->getName() <<endl;
+            cout << name << " has finished watching " << currentViewAble->getName() << "\n" << endl;
             currentViewAble = NULL;
+        }
+            //if its not bigger than viewable run time print what he is watch and how much time left
+        else {
+            cout << name << " has watched " <<currentViewAble->getName() << " for "<< timer << " minutes out of " << currentViewAble->getTime() <<endl;
+            currentViewAble->unregister(id);
         }
 
     }
@@ -34,14 +64,14 @@ bool Client::isWatching() {
         return false;
 }
 
-const string &Client::getName() const {
-    return name;
+void Client::stopWatching() {
+    if(this->isWatching()){
+        cout << "stopping " << name << " from watching " << currentViewAble->getName() <<endl;
+        currentViewAble->unregister(id);
+        currentViewAble = NULL;
+    }
+    else
+        cout <<"nothing to stop, " << name << " is not watching anything anyway\n" <<endl;
 }
 
-const string &Client::getLocation() const {
-    return location;
-}
 
-const string &Client::getId() const {
-    return id;
-}

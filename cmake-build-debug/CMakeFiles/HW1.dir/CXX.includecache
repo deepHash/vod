@@ -65,6 +65,8 @@ cstdio
 -
 string
 -
+cstring
+-
 SimulationService.h
 C:/Users/KaktusX/Google Drive/Studies/My/Design Patterns/C++/HW1/SimulationService.h
 
