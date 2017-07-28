@@ -1,7 +1,8 @@
 # vod
 
- Igal Tsesis 306335043
- Ben Reich 304951940
+Authors: 
+ Igal Tsesis
+ Ben Reich
 
 HW1.exe file is in the cmake-build-debug folder
 
